@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{C798AA2E-26AA-0F73-CE5C-FBD7EC55CAE8}</ProjectGuid>
+	<ProjectGuid>{DDF22BD4-52A7-4465-D605-0C7D271D18AE}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraMovement.js" />
+     <Compile Include="Assets\Scripts\Clickable.js" />
      <Compile Include="Assets\Scripts\DrawGrid.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

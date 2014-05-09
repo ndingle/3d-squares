@@ -5,6 +5,10 @@ var width : int = 4;
 var height : int = 4;
 var depth : int = 4;
 
+var size : float = 1;
+
+var linePrefab : GameObject;
+
 function Start () {
 
 	CreateCorners();
@@ -21,14 +25,14 @@ function CreateCorners(){
 			for(var k = 0; k < depth; k++) {
 				
 				//Create that vector
-				var vector : Vector3 = new Vector3(i,j,k);
+				var vector : Vector3 = new Vector3((i * size),(j * size),(k * size));
 				
 				//Spawn that sphere
 				var obj : GameObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 				obj.transform.position = vector;
-				obj.transform.localScale.x = 0.1;
-				obj.transform.localScale.y = 0.1;
-				obj.transform.localScale.z = 0.1;
+				obj.transform.localScale.x = size / 10;
+				obj.transform.localScale.y = size / 10;
+				obj.transform.localScale.z = size / 10;
 				
 			}
 		}
@@ -44,13 +48,16 @@ function CreateLines() {
 		for(var j = 0; j < height; j++) {
 			for(var k = 0; k < depth; k++) {
 		
-				var obj : GameObject = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-				obj.transform.position.x = i + 0.5;
-				obj.transform.position.y = j;
-				obj.transform.position.z = k;
-				obj.transform.localScale.x = 0.02;
-				obj.transform.localScale.y = 0.5;
-				obj.transform.localScale.z = 0.02;
+				var pos : Vector3;
+				pos.x = (i * size) + (size / 2);
+				pos.y = (j * size);
+				pos.z = (k * size);
+		
+				var obj : GameObject = Instantiate(linePrefab, pos, Quaternion.identity);
+				
+				obj.transform.localScale.x = size / 25;
+				obj.transform.localScale.y = size / 2;
+				obj.transform.localScale.z = size / 25;
 				obj.transform.Rotate(0,0,90);
 				
 			}
@@ -61,14 +68,16 @@ function CreateLines() {
 	for(i = 0; i < width; i++) {
 		for(j = 0; j < height-1; j++) {
 			for(k = 0; k < depth; k++) {
-		
-				obj = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-				obj.transform.position.x = i;
-				obj.transform.position.y = j + 0.5;
-				obj.transform.position.z = k;
-				obj.transform.localScale.x = 0.02;
-				obj.transform.localScale.y = 0.5;
-				obj.transform.localScale.z = 0.02;
+				
+				pos.x = (i * size);
+				pos.y = (j * size) + size / 2;
+				pos.z = (k * size);
+				
+				obj = Instantiate(linePrefab, pos, Quaternion.identity);
+
+				obj.transform.localScale.x = size / 25;
+				obj.transform.localScale.y = size / 2;
+				obj.transform.localScale.z = size / 25;
 				
 			}
 		}
@@ -79,13 +88,14 @@ function CreateLines() {
 		for(j = 0; j < height; j++) {
 			for(k = 0; k < depth-1; k++) {
 		
-				obj = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-				obj.transform.position.x = i;
-				obj.transform.position.y = j;
-				obj.transform.position.z = k + 0.5;
-				obj.transform.localScale.x = 0.02;
-				obj.transform.localScale.y = 0.5;
-				obj.transform.localScale.z = 0.02;
+				pos.x = (i * size);
+				pos.y = (j * size);
+				pos.z = (k * size) + size / 2;
+		
+				obj = Instantiate(linePrefab, pos, Quaternion.identity);
+				obj.transform.localScale.x = size / 25;
+				obj.transform.localScale.y = size / 2;
+				obj.transform.localScale.z = size / 25;
 				obj.transform.Rotate(90,0,0);
 				
 			}
