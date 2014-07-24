@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Squares\Cube.js">
+    <Files>
+      <File FileName="Assets\Scripts\Squares\GridData.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Squares\Grid.js" Line="50" Column="38" />
+      <File FileName="Assets\Scripts\Squares\Game.js" Line="111" Column="27" />
+      <File FileName="Assets\Scripts\Squares\Cube.js" Line="35" Column="15" />
+      <File FileName="Assets\Scripts\Squares\GridGraphics.js" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
