@@ -46,12 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Squares\ClickableCorner.js" />
-     <Compile Include="Assets\Scripts\Squares\Cube.js" />
-     <Compile Include="Assets\Scripts\Squares\Game.js" />
-     <Compile Include="Assets\Scripts\Squares\Grid.js" />
-     <Compile Include="Assets\Scripts\Squares\GridData.js" />
-     <Compile Include="Assets\Scripts\Squares\GridGraphics.js" />
+     <Compile Include="Assets\Scripts\GUI\GameInterface.js" />
+     <Compile Include="Assets\Scripts\Scripts\ClickableCorner.js" />
+     <Compile Include="Assets\Scripts\Scripts\Cube.js" />
+     <Compile Include="Assets\Scripts\Scripts\Game.js" />
+     <Compile Include="Assets\Scripts\Scripts\Grid.js" />
+     <Compile Include="Assets\Scripts\Scripts\GridData.js" />
+     <Compile Include="Assets\Scripts\Scripts\GridGraphics.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
