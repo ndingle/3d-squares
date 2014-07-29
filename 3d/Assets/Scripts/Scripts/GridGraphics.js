@@ -7,6 +7,10 @@ class GridGraphics extends MonoBehaviour {
 	var lineLength : float = 5.0f;
 	var cornerSize : float = 1.0f;
 	
+	var cornerPrefab : GameObject;
+	var linePrefab : GameObject;
+	var squarePrefab : GameObject;
+	
 	
 	/* Private Variables */
 	private var width : int = 0;
@@ -31,7 +35,7 @@ class GridGraphics extends MonoBehaviour {
 		//Add the properties to the 
 		cornersContainer = new GameObject();
 		cornersContainer.transform.position = Camera.main.transform.position;
-		cornersContainer.transform.position.z = 4 * average;
+		cornersContainer.transform.position.z = 2 * average;
 		cornersContainer.transform.position.y += (lineLength * average) / 2;
 		cornersContainer.transform.position.x -= (lineLength * average) / 2;
 		cornersContainer.name = "Corners";
@@ -66,13 +70,12 @@ class GridGraphics extends MonoBehaviour {
 	function DrawCorner(x : int, y : int, z : int) {
 	
 		//Create a corner object
-		var newCorner = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+		var newCorner = GameObject.Instantiate(cornerPrefab, cornersContainer.transform.position, Quaternion.identity);
 		
 		//Size
 		newCorner.transform.localScale = Vector3.one * cornerSize;
 		
 		//Position
-		newCorner.transform.position = cornersContainer.transform.position;
 		newCorner.transform.position.x += x * lineLength;
 		newCorner.transform.position.y -= y * lineLength;
 		newCorner.transform.position.z += z * lineLength;
@@ -91,14 +94,11 @@ class GridGraphics extends MonoBehaviour {
 	function DrawLine(c : Vector3, line : LineIndices) {
 	
 		//Draw the line and set the direction
-		var newLine = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+		var newLine = GameObject.Instantiate(linePrefab, GetCornerByVector(c).transform.position, Quaternion.identity);
 		
 		//Size
 		newLine.transform.localScale = Vector3.one * 0.3f;
 		newLine.transform.localScale.y = lineLength / 2;
-		
-		//Position
-		newLine.transform.position = GetCornerByVector(c).transform.position;
 		
 		//Tweak the position based on direction
 		switch(line){
@@ -126,19 +126,13 @@ class GridGraphics extends MonoBehaviour {
 	
 	
 	function DrawSquare(player : int, c : Vector3, face : SquareIndices) {
-	
-		//Draw a square at the give point
-		var corner = GetCornerByVector(c);
 		
 		//Create the square
-		var newSquare = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		var newSquare = GameObject.Instantiate(squarePrefab, GetCornerByVector(c).transform.position, Quaternion.identity);
 		
 		//Size
 		newSquare.transform.localScale = Vector3.one * lineLength;
 		newSquare.transform.localScale.z = 0.1f;
-		
-		//Position
-		newSquare.transform.position = corner.transform.position;
 		
 		//Tweak
 		switch(face) {
@@ -158,9 +152,8 @@ class GridGraphics extends MonoBehaviour {
 				break;
 		}
 		
-		//The square's look
-		newSquare.renderer.material.shader = Shader.Find("Transparent/Diffuse");
-
+		var alpha = newSquare.renderer.material.color.a;
+	
 		switch(player) {
 			case 0:
 				newSquare.renderer.material.color = Color.blue;
@@ -179,8 +172,9 @@ class GridGraphics extends MonoBehaviour {
 				break;
 		}	
 		
+		newSquare.renderer.material.color.a = alpha;
+		
 		//Other stuff
-		newSquare.renderer.material.color.a = 0.4f;
 		newSquare.transform.parent = squaresContainer.transform;
 		newSquare.name = c.x + "," + c.y + "," + c.z + "-" + face;
 	

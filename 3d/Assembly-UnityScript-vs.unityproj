@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Camera\CameraController.js" />
+     <Compile Include="Assets\Scripts\Camera\FadeOnDistance.js" />
      <Compile Include="Assets\Scripts\GUI\GameInterface.js" />
      <Compile Include="Assets\Scripts\Scripts\ClickableCorner.js" />
      <Compile Include="Assets\Scripts\Scripts\Cube.js" />

@@ -17,6 +17,7 @@ class Game extends MonoBehaviour {
 	private var player : int = 0;
 	private var playerScores : int[];
 	private var squareCount : int = 0;
+	private var totalFaces : int = 0;
 	
 	private var first : Vector3;
 	private var second : Vector3;
@@ -47,6 +48,9 @@ class Game extends MonoBehaviour {
 		first = EMPTY_CORNER;
 		player = 0;
 		playerScores = new int[maxPlayers];
+		totalFaces = ((width * depth) * (depth + 1)) +
+					 ((width * height) * (height + 1)) +
+					 ((height * depth) * (width + 1));
 	
 	}
 	
@@ -211,7 +215,7 @@ class Game extends MonoBehaviour {
 	
 	function get IsGameComplete() {
 		//TODO: Actually work out the equation for this
-		return (squareCount >= ((width * height * depth) * 3) + 3);
+		return (squareCount >= totalFaces);
 	}
 	
 }
