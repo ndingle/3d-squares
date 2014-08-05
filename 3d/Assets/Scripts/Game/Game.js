@@ -103,6 +103,17 @@ class Game extends MonoBehaviour {
 					//Now create the line and the graphics
 					grid.CreateLine(first,line);
 					gridGraphics.DrawLine(first,line);
+					Camera.main.SendMessage("RefreshLines",SendMessageOptions.RequireReceiver);
+					
+					//OK Now we need to check if the line is required anymore
+					if(grid.IsCornerFinished(first)) {
+						gridGraphics.DisableCorner(first);
+					}
+					
+					//OK Now we need to check if the line is required anymore
+					if(grid.IsCornerFinished(second)) {
+						gridGraphics.DisableCorner(second);
+					}
 					
 					//Get the new squares
 					var squares : Array = new Array();
@@ -112,6 +123,7 @@ class Game extends MonoBehaviour {
 					for(var i = 0; i < squares.length; i++) {
 						var result : SquareReturn = squares[i] as SquareReturn;
 						gridGraphics.DrawSquare(player, result.coord, result.square);
+						Camera.main.SendMessage("RefreshSquares",SendMessageOptions.RequireReceiver);
 					}
 					
 					//Add to the player's score

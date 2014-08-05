@@ -143,5 +143,25 @@ class Grid extends System.Object {
 		}
 		
 	}
+	
+	function IsCornerFinished(c : Vector3) {
+	
+		var finished = true;
+	
+		//More
+		if(c.x < width && finished) { finished = grid[c.x,c.y,c.z].lines[LineIndices.Horizontal]; }
+		if(c.y < height && finished) { finished = grid[c.x,c.y,c.z].lines[LineIndices.Vertical]; }
+		if(c.z < depth && finished) { finished = grid[c.x,c.y,c.z].lines[LineIndices.Deep]; }
+
+		//So far so good
+		
+		if(c.x > 0 && finished) { finished = grid[c.x-1,c.y,c.z].lines[LineIndices.Horizontal]; Debug.Log(finished);}
+		if(c.y > 0 && finished) { finished = grid[c.x,c.y-1,c.z].lines[LineIndices.Vertical]; }
+		if(c.z > 0 && finished) { finished = grid[c.x,c.y,c.z-1].lines[LineIndices.Deep]; }
+		
+
+		return finished;
+	
+	}
 			
 }

@@ -17,7 +17,6 @@ Made in Unity3d, this game takes that concept to another depth, it adds... depth
 
   * Players whom capture a whole cube (i.e. 6 connected squares)
   * Add graphics to all spheres, cylinders and cubes
-  * Disable dots which have all lines connected to
   * Add keyboard and touch support to camera movement
   * Add movement boundaries to the camera 
   * Add finish game support

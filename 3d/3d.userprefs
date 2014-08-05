@@ -1,15 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Scripts\GridGraphics.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game\Game.js">
     <Files>
-      <File FileName="Assets\Scripts\Scripts\Grid.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Camera\FadeOnDistance.js" Line="17" Column="1" />
-      <File FileName="Assets\Scripts\Scripts\Cube.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Scripts\GridGraphics.js" Line="38" Column="44" />
-      <File FileName="Assets\Scripts\Scripts\Game.js" Line="219" Column="3" />
-      <File FileName="Assets\Scripts\Scripts\GridData.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\Grid.js" Line="161" Column="19" />
+      <File FileName="Assets\Scripts\Game\Cube.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Camera\FadeOnDistance.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GUI\GameInterface.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Camera\CameraController.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\Game.js" Line="108" Column="47" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

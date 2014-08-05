@@ -49,12 +49,12 @@
      <Compile Include="Assets\Scripts\Camera\CameraController.js" />
      <Compile Include="Assets\Scripts\Camera\FadeOnDistance.js" />
      <Compile Include="Assets\Scripts\GUI\GameInterface.js" />
-     <Compile Include="Assets\Scripts\Scripts\ClickableCorner.js" />
-     <Compile Include="Assets\Scripts\Scripts\Cube.js" />
-     <Compile Include="Assets\Scripts\Scripts\Game.js" />
-     <Compile Include="Assets\Scripts\Scripts\Grid.js" />
-     <Compile Include="Assets\Scripts\Scripts\GridData.js" />
-     <Compile Include="Assets\Scripts\Scripts\GridGraphics.js" />
+     <Compile Include="Assets\Scripts\Game\ClickableCorner.js" />
+     <Compile Include="Assets\Scripts\Game\Cube.js" />
+     <Compile Include="Assets\Scripts\Game\Game.js" />
+     <Compile Include="Assets\Scripts\Game\Grid.js" />
+     <Compile Include="Assets\Scripts\Game\GridData.js" />
+     <Compile Include="Assets\Scripts\Game\GridGraphics.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

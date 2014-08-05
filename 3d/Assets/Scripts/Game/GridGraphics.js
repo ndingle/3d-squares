@@ -151,8 +151,6 @@ class GridGraphics extends MonoBehaviour {
 				newSquare.transform.position.z += lineLength / 2;
 				break;
 		}
-		
-		var alpha = newSquare.renderer.material.color.a;
 	
 		switch(player) {
 			case 0:
@@ -172,15 +170,14 @@ class GridGraphics extends MonoBehaviour {
 				break;
 		}	
 		
-		newSquare.renderer.material.color.a = alpha;
-		
 		//Other stuff
 		newSquare.transform.parent = squaresContainer.transform;
 		newSquare.name = c.x + "," + c.y + "," + c.z + "-" + face;
 	
 	}
 	
-	
+	function DisableCorner(c : Vector3)		{ Destroy(GetCornerByVector(c).GetComponent(MeshRenderer)); Destroy(GetCornerByVector(c).GetComponent(SphereCollider)); }
+	function EnableCorner(c : Vector3)		{ GetCornerByVector(c).AddComponent(MeshRenderer); GetCornerByVector(c).AddComponent(SphereCollider); }
 	function GetCornerByVector(c : Vector3)	{ return GameObject.Find(c.x + "," + c.y + "," + c.z); }
 	function EnableHighlight(c : Vector3)	{ GetCornerByVector(c).renderer.material.color = Color.red; }
 	function DisableHighlight(c : Vector3)	{ GetCornerByVector(c).renderer.material.color = Color.white; }
